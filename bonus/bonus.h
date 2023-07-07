@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:56:44 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/06 03:22:18 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:28:56 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,8 @@
 # include<stdio.h>
 # include<stdlib.h>
 # include<limits.h>
+# include "../pushswap.h"
 # include"../lib/libft.h"
-
-typedef struct s_node
-{
-	int				x;
-	int				pos;
-	struct s_node	*next;
-}	t_node;
 
 void	check_sorted(t_node *a);
 char	*get_next_line(int fd);
@@ -46,6 +40,7 @@ int		ft_atoi(const char *str);
 int		check_sort(t_node *a);
 void	do_instru(t_node **a, t_node **b);
 int		check_alpha(char **split);
+void	ft_do_instru(t_node **a, t_node **b, int flag);
 t_node	*pars_one(char *av);
 
 #endif

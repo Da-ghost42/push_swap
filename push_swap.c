@@ -6,21 +6,34 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:39:10 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 15:17:01 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:41:45 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"pushswap.h"
 
+void	ft_do_instru(t_node **a, t_node **b, int flag)
+{
+	if (flag == 0)
+		push (a, b, 1);
+	else if (flag == 1)
+	{
+		push (a, b, 1);
+		rotate (b, 1);
+	}
+	else
+		rotate (a, 1);
+}
+
 void	norm_help(t_node **a, t_node **b, int pos, int i)
 {
-	if (i == 0)
+	if (i == 1)
 	{
 		if ((*b)->next)
 			push_one(a, b, pos);
 		push_one(a, b, pos - 1);
 	}
-	if (i == 1)
+	else
 	{
 		push_one(a, b, pos - 1);
 		push_one(a, b, pos);
@@ -121,9 +134,8 @@ int	main(int ac, char **av)
 	else if (lst_size(a) == 5)
 		sort_five(&a, &b);
 	else if (lst_size(a) > 5 && lst_size(a) <= 100)
-		sort_max(&a, &b, 5);
+		sort_max(&a, &b, 5, lst_size(a));
 	else if (lst_size(a) > 100)
-		sort_max(&a, &b, 9);
-	ft_clear(&a);
-	return (0);
+		sort_max(&a, &b, 9, lst_size(a));
+	ft_clear (&a);
 }

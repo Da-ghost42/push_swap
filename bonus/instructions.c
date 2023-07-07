@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:00:23 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/05 18:11:20 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/07 17:30:25 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	rotate_c(t_node **a)
 	if (a == NULL || lst_size (*a) < 2)
 	{
 		ft_putstr_fd ("KO", 1);
+		ft_clear(a);
 		exit (0);
 	}	
 	tmp = *a;
@@ -59,6 +60,8 @@ void	re_rotate_c(t_node **a, t_node **b)
 	if (lst_size (*a) < 2 || lst_size (*b) < 2)
 	{
 		ft_putstr_fd ("KO", 1);
+		ft_clear(a);
+		ft_clear(b);
 		exit (0);
 	}
 	rotate_c (a);
@@ -72,6 +75,7 @@ void	rev_rotate_c(t_node **a)
 	if (a == NULL || lst_size (*a) < 2)
 	{
 		ft_putstr_fd ("KO", 1);
+		ft_clear(a);
 		exit (0);
 	}
 	tmp = *a;

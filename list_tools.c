@@ -6,13 +6,13 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:41:02 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 16:19:00 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:38:45 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"pushswap.h"
 
-void	error()
+void	error(void)
 {
 	ft_putstr_fd("ERROR", 2);
 	exit (0);
@@ -23,7 +23,7 @@ void	check_sorted(t_node *a)
 	while (a->next && a->x < a->next->x)
 			a = a->next;
 	if (!a->next)
-		error ();
+		ft_clean_error (&a);
 }
 
 t_node	*lst_new(int content)
@@ -44,7 +44,7 @@ void	add_front(t_node **head, int value, int pos)
 
 	tmp = malloc (sizeof(t_node));
 	if (!tmp)
-		exit (0);
+		ft_clean_error (head);
 	tmp->x = value;
 	tmp->pos = pos;
 	tmp->next = NULL;

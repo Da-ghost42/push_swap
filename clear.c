@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 15:16:14 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 16:22:25 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:30:54 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 void	delast(t_node **head)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (*head == NULL)
 		exit (0);
 	else if ((*head)->next == NULL)
 	{
-		free(*head);
+		free (*head);
 		*head = NULL;
 	}
-	else 
+	else
 	{
 		tmp = *head;
 		while (tmp->next->next != NULL)
 			tmp = tmp->next;
-		free(tmp->next);
+		free (tmp->next);
 		tmp->next = NULL;
 	}
 }
@@ -36,18 +36,20 @@ void	delast(t_node **head)
 void	ft_clear(t_node **a)
 {
 	int	i;
-	int	j = lst_size(*a) - 1;
+	int	j;
 
 	i = 0;
 	if (!*a)
 		return ;
+	j = lst_size(*a) - 1;
 	while (*a && i++ <= j)
 		delast(a);
 }
-void	ft_clean_error(t_node **a, t_node **b)
+
+void	ft_clean_error(t_node **a)
 {
-	ft_putstr_fd("Error",2);
+	ft_putstr_fd("Error", 2);
 	ft_clear(a);
-	ft_clear(b);
 	exit (0);
 }
+

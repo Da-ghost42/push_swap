@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:40:54 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 16:26:28 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:41:58 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_node
 }	t_node;
 
 void	ft_clear(t_node **a);
+void	ft_do_instru(t_node **a, t_node **b, int flag);
 int		pos_finder(t_node *a, int v);
 void	check_sorted(t_node *a);
 void	push_he(t_node **a, t_node **b, int chunck, int size_chunck);
@@ -38,7 +39,7 @@ int		*sort_tab(int *p, int n);
 void	to_a(t_node **a, t_node **b, int pos);
 void	norm_help(t_node **a, t_node **b, int pos, int i);
 void	position(t_node **a, int n);
-void	sort_max(t_node **a, t_node **b, int num);
+void sort_max(t_node **a, t_node **b, int num, int i);
 void	sort_five(t_node **a, t_node **b);
 void	rotate(t_node **a, int i);
 void	sort_two(t_node **a);
@@ -59,7 +60,6 @@ void	push_two(t_node **a, t_node **b, int pos);
 void	push_one(t_node **a, t_node **b, int pos);
 void	re_rotate(t_node **a, t_node **b, int i);
 char	*get_next_line(int fd);
-void	check_instru(t_node **a, t_node **b);
-void	ft_clean_error(t_node **a, t_node **b);
+void	ft_clean_error(t_node **a);
 
 #endif
