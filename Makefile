@@ -19,7 +19,7 @@ RM = rm -rf
 
 CC = cc
 
-#OPTION_FLAG = -fsanitize=address
+OPTION_FLAG = -fsanitize=address
 
 CFALGS = -Wall -Wextra -Werror
 

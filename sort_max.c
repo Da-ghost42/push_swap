@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 04:07:06 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 21:42:12 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/08 14:40:43 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ int	sec_max(t_node *a)
 	return (s_max);
 }
 
-void sort_max(t_node **a, t_node **b, int num, int i)
+void	sort_max(t_node **a, t_node **b, int num, int i)
 {
-	int size_chunck;
-	int chunck;
-	int j;
+	int	size_chunck;
+	int	chunck;
+	int	j;
 
 	j = 0;
 	position(a, i);
@@ -62,6 +62,7 @@ void sort_max(t_node **a, t_node **b, int num, int i)
 		else
 			ft_do_instru(a, b, 2);
 	}
+	position(b, lst_size (*b));
 	to_a(a, b, i - 1);
 }
 
@@ -98,24 +99,24 @@ void	push_one(t_node **a, t_node **b, int pos)
 	push(b, a, 0);
 }
 
-void to_a(t_node **a, t_node **b, int pos)
+void	to_a(t_node **a, t_node **b, int pos)
 {
-	int swp;
+	int	swp;
 
-	position(b,lst_size(*b));
 	while ((*b))
 	{
 		swp = 0;
-		if (less_instra(*b, pos_finder(*b, pos)) <= less_instra(*b,pos_finder(*b, pos - 1)))
+		if (less_instra(*b, pos_finder(*b, pos))
+			<= less_instra(*b, pos_finder(*b, pos - 1)))
 		{
-			norm_help(a,b,pos,1);
+			norm_help(a, b, pos, 1);
 			pos -= 2;
 		}
 		else
 		{
-			if (lst_size(*b) >= 2)
+			if (lst_size (*b) >= 2)
 			{
-				norm_help(a,b,pos,0);
+				norm_help(a, b, pos, 0);
 				pos -= 2;
 				swp = 1;
 			}

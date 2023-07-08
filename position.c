@@ -6,11 +6,24 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 01:50:41 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/05 03:27:49 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/08 14:36:18 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"pushswap.h"
+
+void	ft_do_instru(t_node **a, t_node **b, int flag)
+{
+	if (flag == 0)
+		push (a, b, 1);
+	else if (flag == 1)
+	{
+		push (a, b, 1);
+		rotate (b, 1);
+	}
+	else
+		rotate (a, 0);
+}
 
 int	*sort_tab(int *p, int n)
 {

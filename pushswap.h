@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:40:54 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 21:41:58 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/08 14:37:04 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		*sort_tab(int *p, int n);
 void	to_a(t_node **a, t_node **b, int pos);
 void	norm_help(t_node **a, t_node **b, int pos, int i);
 void	position(t_node **a, int n);
-void sort_max(t_node **a, t_node **b, int num, int i);
+void	sort_max(t_node **a, t_node **b, int num, int i);
 void	sort_five(t_node **a, t_node **b);
 void	rotate(t_node **a, int i);
 void	sort_two(t_node **a);

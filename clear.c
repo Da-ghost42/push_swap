@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 15:16:14 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 21:30:54 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/08 14:35:41 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,3 @@ void	ft_clean_error(t_node **a)
 	ft_clear(a);
 	exit (0);
 }
-
