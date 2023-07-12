@@ -6,11 +6,21 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 15:16:14 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/08 14:35:41 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 01:31:01 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"pushswap.h"
+
+void	ft_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		free(str[i++]);
+	free (str);
+}
 
 void	delast(t_node **head)
 {
@@ -35,14 +45,9 @@ void	delast(t_node **head)
 
 void	ft_clear(t_node **a)
 {
-	int	i;
-	int	j;
-
-	i = 0;
 	if (!*a)
 		return ;
-	j = lst_size(*a) - 1;
-	while (*a && i++ <= j)
+	while (*a)
 		delast(a);
 }
 

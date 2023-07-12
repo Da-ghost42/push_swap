@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:40:54 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/08 14:37:04 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 01:14:28 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_node
 }	t_node;
 
 void	ft_clear(t_node **a);
+void	ft_free(char **str);
+void	delast(t_node **head);
 void	ft_do_instru(t_node **a, t_node **b, int flag);
 int		pos_finder(t_node *a, int v);
 void	check_sorted(t_node *a);

@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:51:25 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/05 18:23:37 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 01:09:27 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	swap(t_node **a, int i)
 	tmp->next->next = NULL;
 	add_front (a, tmp->x, tmp->pos);
 	add_front (a, tmp->next->x, tmp->next->pos);
+	ft_clear(&tmp);
 	if (i == 0)
 		write (1, "sa\n", 3);
 	else if (i == 1)
@@ -48,10 +49,10 @@ void	rotate(t_node **a, int i)
 	if (a == NULL || lst_size(*a) == 1)
 		return ;
 	tmp = *a;
-	tmp = tmp->next;
-	(*a)->next = NULL;
-	addback (&tmp, (*a)->x, (*a)->pos);
-	*a = tmp;
+	*a = (*a)->next;
+	tmp->next = NULL;
+	addback (a, tmp->x, tmp->pos);
+	ft_clear (&tmp);
 	if (i == 0)
 		write (1, "ra\n", 3);
 	else if (i == 1)
@@ -80,7 +81,7 @@ void	rev_rotate(t_node **a, int i)
 	while (tmp->next->next != NULL)
 		tmp = tmp->next;
 	add_front (a, tmp->next->x, tmp->next->pos);
-	tmp->next = NULL;
+	delast(&tmp);
 	if (i == 0)
 		write (1, "rra\n", 4);
 	else if (i == 1)

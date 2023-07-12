@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 00:15:52 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/05 18:23:46 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 01:06:29 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ void	push(t_node **a, t_node **b, int i)
 
 	if (*a == NULL)
 		return ;
-	tmp = (*a)->next;
-	(*a)->next = NULL;
-	add_front (b, (*a)->x, (*a)->pos);
-	*a = tmp;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = NULL;
+	add_front (b, tmp->x, tmp->pos);
+	delast(&tmp);
 	if (i == 0)
 		write (1, "pa\n", 3);
 	else if (i == 1)

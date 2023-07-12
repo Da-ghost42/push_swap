@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:14:23 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 17:25:58 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 03:28:48 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ t_node	*pars_one(char *av)
 			addback(&list, y, 0);
 		x++;
 	}
+	ft_free (split);
 	return (list);
 }
 
@@ -123,5 +124,5 @@ int	main(int ac, char **av)
 	check_sorted (a);
 	i = lst_size(a);
 	do_instru (&a, &b);
-	print_ko(a, i);
+	print_ko(a, b, i);
 }

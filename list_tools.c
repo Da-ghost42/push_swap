@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:41:02 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/08 14:21:38 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/11 23:39:34 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	add_front(t_node **head, int value, int pos)
 
 	tmp = malloc (sizeof(t_node));
 	if (!tmp)
-		error ();
+		ft_clean_error (head);
 	tmp->x = value;
 	tmp->pos = pos;
 	tmp->next = NULL;
@@ -63,6 +63,8 @@ void	addback(t_node **head, int value, int pos)
 	while (ptr->next != NULL)
 		ptr = ptr->next;
 	tmp = malloc (sizeof(t_node));
+	if (!tmp)
+		ft_clean_error(head);
 	tmp->x = value;
 	tmp->pos = pos;
 	tmp->next = NULL;

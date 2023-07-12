@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:00:23 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/07 17:30:25 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 01:24:00 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 void	swap_c(t_node **a)
 {
-	int	x;
-	int	pos;
+	t_node *tmp;
 
 	if (*a == NULL || lst_size (*a) == 1)
 		error ();
-	x = (*a)->x;
-	pos = (*a)->pos;
-	(*a)->x = (*a)->next->x;
-	(*a)->pos = (*a)->next->pos;
-	(*a)->next->x = x;
-	(*a)->next->pos = pos;
+	tmp = *a;
+	*a = (*a)->next->next;
+	tmp->next->next = NULL;
+	add_front (a, tmp->x, tmp->pos);
+	add_front (a, tmp->next->x, tmp->next->pos);
+	ft_clear(&tmp);
 }
 
 void	swap_swap_c(t_node **a, t_node **b)
@@ -49,10 +48,10 @@ void	rotate_c(t_node **a)
 		exit (0);
 	}	
 	tmp = *a;
-	tmp = tmp->next;
-	(*a)->next = NULL;
-	addback (&tmp, (*a)->x, (*a)->pos);
-	*a = tmp;
+	(*a) = (*a)->next;
+	tmp->next = NULL;
+	addback (a, tmp->x, tmp->pos);
+	delast(&tmp);
 }
 
 void	re_rotate_c(t_node **a, t_node **b)
@@ -82,5 +81,5 @@ void	rev_rotate_c(t_node **a)
 	while (tmp->next->next != NULL)
 		tmp = tmp->next;
 	add_front (a, tmp->next->x, tmp->next->pos);
-	tmp->next = NULL;
+	delast(&tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:39:10 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/08 14:34:48 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 01:13:48 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ t_node	*pars_one(char *av)
 			addback (&list, y, 0);
 		x++;
 	}
+	ft_free(split);
 	return (list);
 }
 
