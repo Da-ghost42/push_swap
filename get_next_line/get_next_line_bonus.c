@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 14:07:31 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/02/02 15:00:37 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/13 03:29:14 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ char	*get_rest(char *hold)
 	if (hold[nl] && hold[nl + 1] && hold[nl] == '\n')
 	{
 		new_hold = malloc(ft_strlenght(hold) - nl + 1);
+		if (!new_hold)
+			return (NULL);
 		while (hold[++nl])
 			new_hold[i++] = hold[nl];
 			new_hold[i] = 0;

@@ -37,7 +37,7 @@ ${BONUS} : ${OBJ_B} ${BONUS_H}
 	@echo "compiled"
 	@${CC} ${CFALGS} ${OPTION_FLAG} ${OBJ_B} ${LIB} -o ${BONUS}
 
-%.o:%.c ${HEADER}
+%.o:%.c ${HEADER} ${BONUS_H}
 	@${CC} ${CFALGS} ${OPTION_FLAG} -c $< -o $@
 
 make_libft :
