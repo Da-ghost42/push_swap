@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 17:29:59 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/12 01:43:54 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/13 00:18:11 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	check_sort(t_node *a)
 	return (0);
 }
 
-void	print_ko(t_node *a, t_node *b,int i)
+void	print_ko(t_node *a, t_node *b, int i)
 {
 	if (b)
 		ft_clear(&b);

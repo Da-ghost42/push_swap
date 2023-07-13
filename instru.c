@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:51:25 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/12 01:09:27 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 03:47:31 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	swap(t_node **a, int i)
 		write (1, "sa\n", 3);
 	else if (i == 1)
 		write (1, "sb\n", 3);
-	else
-		return ;
 }
 
 void	swap_swap(t_node **a, t_node **b, int i)
@@ -86,6 +84,4 @@ void	rev_rotate(t_node **a, int i)
 		write (1, "rra\n", 4);
 	else if (i == 1)
 		write (1, "rrb\n", 4);
-	else
-		return ;
 }

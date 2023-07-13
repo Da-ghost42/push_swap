@@ -9,6 +9,8 @@ OBJ = ${SRC:.c=.o}
 
 HEADER = pushswap.h
 
+BONUS_H = bonus/bonus.h
+
 NAME = push_swap
 
 BONUS = checker
@@ -31,14 +33,15 @@ ${NAME}: ${OBJ}
 	@echo "compiled"
 	@${CC} ${CFALGS} ${OPTION_FLAG} ${OBJ} ${LIB} -o ${NAME}
 
-${BONUS} : ${OBJ_B}
+${BONUS} : ${OBJ_B} ${BONUS_H}
 	@echo "compiled"
 	@${CC} ${CFALGS} ${OPTION_FLAG} ${OBJ_B} ${LIB} -o ${BONUS}
 
 %.o:%.c ${HEADER}
 	@${CC} ${CFALGS} ${OPTION_FLAG} -c $< -o $@
 
-make_libft : 
+make_libft :
+	@echo "lib compiled"
 	@make -C lib
 clean :
 	@make clean -C lib

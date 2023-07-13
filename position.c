@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 01:50:41 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/08 14:36:18 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/13 00:14:25 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	position(t_node **a, int n)
 
 	p = malloc(n * sizeof(int));
 	if (!p)
-		return ;
+		ft_clean_error(a);
 	tmp = *a;
 	i = -1;
 	while (tmp && ++i < n)

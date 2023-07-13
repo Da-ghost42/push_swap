@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:00:23 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/12 01:24:00 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 04:12:34 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap_c(t_node **a)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (*a == NULL || lst_size (*a) == 1)
 		error ();

@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 00:15:52 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/12 01:06:29 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/12 03:46:57 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	push(t_node **a, t_node **b, int i)
 		write (1, "pa\n", 3);
 	else if (i == 1)
 		write (1, "pb\n", 3);
-	else
-		return ;
 }
 
 int	ft_atoi(const char *str)

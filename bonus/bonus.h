@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:56:44 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/12 01:44:38 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/13 02:26:31 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include"../lib/libft.h"
 
 void	check_sorted(t_node *a);
-void	print_ko(t_node *a, t_node *b,int i);
+void	print_ko(t_node *a, t_node *b, int i);
 char	*get_next_line(int fd);
 t_node	*lst_new(int content);
 void	check_dup(t_node *head);
