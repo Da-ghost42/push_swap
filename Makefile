@@ -21,8 +21,6 @@ RM = rm -rf
 
 CC = cc
 
-OPTION_FLAG = -fsanitize=address
-
 CFALGS = -Wall -Wextra -Werror
 
 all:make_libft ${NAME}
@@ -31,14 +29,14 @@ bonus: make_libft ${BONUS}
 
 ${NAME}: ${OBJ}
 	@echo "compiled"
-	@${CC} ${CFALGS} ${OPTION_FLAG} ${OBJ} ${LIB} -o ${NAME}
+	@${CC} ${CFALGS} ${OBJ} ${LIB} -o ${NAME}
 
 ${BONUS} : ${OBJ_B} ${BONUS_H}
 	@echo "compiled"
-	@${CC} ${CFALGS} ${OPTION_FLAG} ${OBJ_B} ${LIB} -o ${BONUS}
+	@${CC} ${CFALGS} ${OBJ_B} ${LIB} -o ${BONUS}
 
 %.o:%.c ${HEADER} ${BONUS_H}
-	@${CC} ${CFALGS} ${OPTION_FLAG} -c $< -o $@
+	@${CC} ${CFALGS} -c $< -o $@
 
 make_libft :
 	@echo "lib compiled"

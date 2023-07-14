@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:41:02 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/11 23:39:34 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/14 10:51:14 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,16 @@ void	error(void)
 
 void	check_sorted(t_node *a)
 {
-	while (a->next && a->x < a->next->x)
-			a = a->next;
+	t_node	*tmp;
+
+	tmp = a;
+	while (tmp->next && tmp->x < tmp->next->x)
+			tmp = tmp->next;
 	if (!a->next)
-		ft_clean_error (&a);
+	{
+		ft_clear(&a);
+		exit (EXIT_FAILURE);
+	}
 }
 
 t_node	*lst_new(int content)

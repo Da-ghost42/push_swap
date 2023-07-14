@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:39:10 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/12 04:11:02 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/14 10:54:56 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,9 @@ t_node	*pars_args(int ac, char **av)
 
 	i = 1;
 	ptr = NULL;
-	while (i < ac)
+	if (ac < 2)
+		exit(EXIT_FAILURE);
+	while (i++ < ac)
 	{
 		parsed_list = pars_one(av[i]);
 		if (ptr == NULL)
@@ -94,9 +96,13 @@ t_node	*pars_args(int ac, char **av)
 				temp = temp->next;
 			temp->next = parsed_list;
 		}
-		i++;
 	}
 	return (ptr);
+}
+
+void	leaks()
+{
+	system ("leaks push_swap");
 }
 
 int	main(int ac, char **av)
@@ -106,7 +112,8 @@ int	main(int ac, char **av)
 	t_node	*b;
 
 	b = NULL;
-	if (!*av || ac == 1)
+	atexit(leaks);
+	if (!*av)
 		error();
 	head = pars_args(ac, av);
 	a = head;
