@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:14:23 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/18 08:17:08 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/18 09:25:29 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,11 +118,11 @@ int	main(int ac, char **av)
 
 	b = NULL;
 	if (ac == 1)
-		return 0;
+		return (0);
 	a = pars_args (ac, av);
 	check_dup (a);
 	i = lst_size(a);
 	do_instru (&a, &b);
 	print_ko(a, b, i);
-	return 0;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 17:29:59 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/18 08:27:54 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/18 09:20:31 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ void	check_instru(t_node **a, t_node **b, char *str)
 	else if (!ft_strncmp (str, "rra\n", 4))
 		rev_rotate_c(a);
 	else if (!ft_strncmp(str, "rr\n", 3))
-		re_rotate_c (a, b);
+		re_rotate_c (a, b, 0);
 	else if (!ft_strncmp(str, "rrr\n", 4))
-		rev_rotate_r(a, b);
+		re_rotate_c (a, b, -1);
 	else
 		error ();
 }

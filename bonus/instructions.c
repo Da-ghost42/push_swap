@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:00:23 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/18 08:33:42 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/18 09:22:00 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,18 @@ void	rotate_c(t_node **a)
 	delast(&tmp);
 }
 
-void	re_rotate_c(t_node **a, t_node **b)
+void	re_rotate_c(t_node **a, t_node **b, int i)
 {
-	rotate_c (a);
-	rotate_c (b);
+	if (i == 0)
+	{
+		rotate_c (a);
+		rotate_c (b);
+	}
+	else
+	{
+		rev_rotate_c(a);
+		rev_rotate_c(b);
+	}
 }
 
 void	rev_rotate_c(t_node **a)
@@ -62,9 +70,4 @@ void	rev_rotate_c(t_node **a)
 		tmp = tmp->next;
 	add_front (a, tmp->next->x, tmp->next->pos);
 	delast(&tmp);
-}
-void	rev_rotate_r(t_node **a, t_node **b)
-{
-	rev_rotate_c(a);
-	rev_rotate_c(b);
 }
