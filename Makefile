@@ -1,7 +1,6 @@
 SRC = list_tools.c push_swap.c instru.c sort.c sort_four.c position.c sort_max.c ft_atoi.c clear.c 
 
-SRC_B = get_next_line/get_next_line.c ft_atoi.c list_tools.c clear.c \
-	get_next_line/get_next_line_utils.c bonus/instructions.c bonus/parsing.c bonus/checker.c 
+SRC_B = ${shell ls *c}
 
 OBJ_B = ${SRC_B:.c=.o}
 
