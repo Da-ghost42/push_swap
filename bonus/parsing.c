@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:14:23 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/12 03:28:48 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/20 23:22:17 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ t_node	*pars_one(char *av)
 
 	x = 0;
 	list = NULL;
-	if (!*av)
-		error();
 	split = ft_split(av, ' ');
 	if (!*split)
 		error ();
@@ -110,19 +108,17 @@ t_node	*pars_args(int ac, char **av)
 	return (ptr);
 }
 
+
+
 int	main(int ac, char **av)
 {
 	t_node	*a;
 	t_node	*b;
-	int		i;
 
 	b = NULL;
 	if (!*av || ac == 1)
-		error();
+		return (0);
 	a = pars_args (ac, av);
 	check_dup (a);
-	check_sorted (a);
-	i = lst_size(a);
 	do_instru (&a, &b);
-	print_ko(a, b, i);
 }

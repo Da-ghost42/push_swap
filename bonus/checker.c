@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 17:29:59 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/13 00:18:11 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/21 00:13:59 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,25 @@ void	check_instru(t_node **a, t_node **b, char *str)
 void	do_instru(t_node **a, t_node **b)
 {
 	char	*str;
+	int		i;
 
 	str = get_next_line (0);
+	i = lst_size(*a);
 	while (str)
 	{
 		check_instru(a, b, str);
 		free (str);
 		str = get_next_line(0);
 	}
+	print_ko(*a, *b, i);
 }
 
 void	push_c(t_node **a, t_node **b)
 {
 	t_node	*tmp;
 
+	if (!*a)
+		return ;
 	tmp = *a;
 	*a = (*a)->next;
 	tmp->next = NULL;

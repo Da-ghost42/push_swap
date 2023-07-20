@@ -21,7 +21,7 @@ RM = rm -rf
 
 CC = cc
 
-CFALGS = -Wall -Wextra -Werror
+CFALGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 all:make_libft ${NAME}
 

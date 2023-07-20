@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 15:16:14 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/12 01:31:01 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/21 00:15:42 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_clear(t_node **a)
 
 void	ft_clean_error(t_node **a)
 {
-	ft_putstr_fd("Error", 2);
+	ft_putendl_fd("Error", 2);
 	ft_clear(a);
 	exit (0);
 }
