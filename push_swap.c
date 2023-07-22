@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 16:39:10 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/21 00:06:47 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/21 18:00:39 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ t_node	*pars_args(int ac, char **av)
 	i = 0;
 	ptr = NULL;
 	if (ac < 2)
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	while (++i < ac)
 	{
 		parsed_list = pars_one(av[i]);

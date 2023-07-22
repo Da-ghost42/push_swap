@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 18:14:23 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/20 23:22:17 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/21 02:37:09 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,6 @@ t_node	*pars_args(int ac, char **av)
 	}
 	return (ptr);
 }
-
-
 
 int	main(int ac, char **av)
 {

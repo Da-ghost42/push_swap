@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:56:44 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/20 05:27:57 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/22 11:11:04 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_instru(t_node **a, t_node **b, char *str);
 t_node	*pars_args(int ac, char **av);
 void	error(void);
 void	rev_rotate_c(t_node **a);
-void	re_rotate_c(t_node **a, t_node **b);
+void	re_rev_rotate_c(t_node **a, t_node **b, int i);
 void	rotate_c(t_node **a);
 void	swap_swap_c(t_node **a, t_node **b);
 void	push_c(t_node **a, t_node **b);

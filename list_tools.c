@@ -6,7 +6,7 @@
 /*   By: mboutuil <mboutuil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 17:41:02 by mboutuil          #+#    #+#             */
-/*   Updated: 2023/07/14 10:51:14 by mboutuil         ###   ########.fr       */
+/*   Updated: 2023/07/22 10:11:26 by mboutuil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error(void)
 {
-	ft_putstr_fd("ERROR", 2);
+	ft_putendl_fd("ERROR", 2);
 	exit (0);
 }
 
@@ -25,10 +25,10 @@ void	check_sorted(t_node *a)
 	tmp = a;
 	while (tmp->next && tmp->x < tmp->next->x)
 			tmp = tmp->next;
-	if (!a->next)
+	if (!tmp->next)
 	{
 		ft_clear(&a);
-		exit (EXIT_FAILURE);
+		exit (EXIT_SUCCESS);
 	}
 }
 
